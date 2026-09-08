@@ -8,6 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./fantesia-app/jellyfin_fantesia
+    
     steps:
       - uses: actions/checkout@v4
 
@@ -40,5 +44,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: fantesia-apk
-          path: build/app/outputs/flutter-apk/*.apk
+          path: fantesia-app/jellyfin_fantesia/build/app/outputs/flutter-apk/*.apk
           retention-days: 30
